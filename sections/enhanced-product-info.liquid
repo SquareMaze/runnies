@@ -1,0 +1,215 @@
+{%- comment -%}
+  Enhanced Product Information Section for RUNNIES Sunglasses
+  Comprehensive product details with specifications, size guide, and lifestyle imagery
+  
+  Usage: Add this section to product templates for enhanced product information
+{%- endcomment -%}
+
+<div id="section-id-{{ section.id }}" class="section-enhanced-product-info{% unless section.settings.full_width %} container{% endunless %}{% if section.settings.show_space %} fully-spaced-row--medium{% endif %}">
+  <div class="enhanced-product-info">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'enhanced-features' -%}
+          {%- render 'enhanced-product-features', product: product, section: section, current_variant: current_variant, block: block -%}
+        
+        {%- when 'specifications' -%}
+          {%- render 'enhanced-product-specs', product: product, current_variant: current_variant -%}
+        
+        {%- when 'size-guide' -%}
+          {%- render 'enhanced-size-guide', product: product, section: section -%}
+        
+        {%- when 'lifestyle-gallery' -%}
+          {%- render 'lifestyle-image-gallery', product: product, section: section, current_variant: current_variant -%}
+        
+        {%- when 'custom-content' -%}
+          <div class="custom-content-block" {{ block.shopify_attributes }}>
+            {%- if block.settings.title != blank -%}
+              <h3 class="block-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.content != blank -%}
+              <div class="block-content rte">{{ block.settings.content }}</div>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+.section-enhanced-product-info {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.enhanced-product-info {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-content-block {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.block-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #232323;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.block-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: #ffeb01;
+  border-radius: 2px;
+}
+
+.block-content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #495057;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-enhanced-product-info {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .custom-content-block {
+    padding: 1rem;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Enhanced Product Info",
+  "class": "section-enhanced-product-info",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full page width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_space",
+      "label": "Show space above and below section",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "enhanced-features",
+      "name": "Enhanced Features",
+      "settings": [
+        {
+          "type": "text",
+          "id": "features_title",
+          "label": "Features title",
+          "default": "Product Features"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_features",
+          "label": "Show features grid",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_specs",
+          "label": "Show specifications",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_size_guide",
+          "label": "Show size guide",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_lifestyle",
+          "label": "Show lifestyle gallery",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "specifications",
+      "name": "Specifications",
+      "settings": [
+        {
+          "type": "text",
+          "id": "specs_title",
+          "label": "Specifications title",
+          "default": "Product Specifications"
+        }
+      ]
+    },
+    {
+      "type": "size-guide",
+      "name": "Size Guide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "size_guide_title",
+          "label": "Size guide title",
+          "default": "Size Guide"
+        }
+      ]
+    },
+    {
+      "type": "lifestyle-gallery",
+      "name": "Lifestyle Gallery",
+      "settings": [
+        {
+          "type": "text",
+          "id": "gallery_title",
+          "label": "Gallery title",
+          "default": "Lifestyle"
+        }
+      ]
+    },
+    {
+      "type": "custom-content",
+      "name": "Custom Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Enhanced Product Info",
+      "blocks": [
+        {
+          "type": "enhanced-features"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

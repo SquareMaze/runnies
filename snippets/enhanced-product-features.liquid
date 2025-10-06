@@ -1,0 +1,281 @@
+{%- comment -%}
+  Enhanced Product Features Block for RUNNIES Sunglasses
+  Comprehensive product information display with interactive elements
+  
+  Parameters:
+  - product {Object} - Product object
+  - section {Object} - Section object
+  - current_variant {Object} - Current selected variant
+  - block {Object} - Block object for settings
+  
+  Usage:
+  {% render 'enhanced-product-features', product: product, section: section, current_variant: current_variant, block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_features = block.settings.show_features
+  assign show_specs = block.settings.show_specs
+  assign show_size_guide = block.settings.show_size_guide
+  assign show_lifestyle = block.settings.show_lifestyle
+  assign features_title = block.settings.features_title | default: 'Product Features'
+  assign specs_title = block.settings.specs_title | default: 'Specifications'
+-%}
+
+<div class="enhanced-product-features" {{ block.shopify_attributes }}>
+  {%- if show_features -%}
+  <!-- Enhanced Features Display -->
+  <div class="features-section">
+    <div class="features-header">
+      <h3 class="features-title">
+        <svg class="features-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        {{ features_title }}
+      </h3>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+          </svg>
+        </div>
+        <div class="feature-content">
+          <h4 class="feature-title">100% UV Protection</h4>
+          <p class="feature-description">Complete protection from harmful UV rays with advanced lens technology</p>
+        </div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="feature-content">
+          <h4 class="feature-title">Impact Resistant</h4>
+          <p class="feature-description">Durable construction designed to withstand daily wear and activities</p>
+        </div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="feature-content">
+          <h4 class="feature-title">Scratch Resistant</h4>
+          <p class="feature-description">Premium lens coating prevents scratches and maintains clarity</p>
+        </div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+            <rect x="2" y="9" width="20" height="12" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <div class="feature-content">
+          <h4 class="feature-title">Water Resistant</h4>
+          <p class="feature-description">Perfect for beach days, water sports, and outdoor adventures</p>
+        </div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="feature-content">
+          <h4 class="feature-title">Polarized Lenses</h4>
+          <p class="feature-description">Reduce glare and enhance visual clarity in bright conditions</p>
+        </div>
+      </div>
+      
+      <div class="feature-item">
+        <div class="feature-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div class="feature-content">
+          <h4 class="feature-title">Comfortable Fit</h4>
+          <p class="feature-description">Ergonomic design ensures all-day comfort for any activity</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+  
+  {%- if show_specs -%}
+  <!-- Enhanced Specifications -->
+  {%- render 'enhanced-product-specs', product: product, current_variant: current_variant -%}
+  {%- endif -%}
+  
+  {%- if show_size_guide -%}
+  <!-- Enhanced Size Guide -->
+  {%- render 'enhanced-size-guide', product: product, section: section -%}
+  {%- endif -%}
+  
+  {%- if show_lifestyle -%}
+  <!-- Lifestyle Image Gallery -->
+  {%- render 'lifestyle-image-gallery', product: product, section: section, current_variant: current_variant -%}
+  {%- endif -%}
+</div>
+
+<style>
+.enhanced-product-features {
+  margin: 2rem 0;
+}
+
+.features-section {
+  margin-bottom: 2rem;
+}
+
+.features-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #ffeb01;
+}
+
+.features-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #232323;
+}
+
+.features-icon {
+  color: #ffeb01;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #ffeb01;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffeb01 0%, #f0d700 100%);
+  border-radius: 12px;
+  color: #232323;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #232323;
+}
+
+.feature-description {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .enhanced-product-features {
+    margin: 1rem 0;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-item {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .feature-title {
+    font-size: 1rem;
+  }
+  
+  .feature-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animation for feature items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-item {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+.feature-item:nth-child(4) { animation-delay: 0.4s; }
+.feature-item:nth-child(5) { animation-delay: 0.5s; }
+.feature-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .feature-item {
+    animation: none;
+    transition: none;
+  }
+}
+</style>
+{%- endcomment -%}
