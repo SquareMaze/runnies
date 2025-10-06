@@ -1,3 +1,4 @@
+{% comment %} Bundle Page v2.0.0 - Standalone Page Template {% endcomment %}
 {
   "sections": {
     "bundle_assets": {
