@@ -1,7 +1,7 @@
 {
   "sections": {
     "custom_bundle_hero": {
-      "type": "custom-bundle-hero-v3",
+      "type": "custom-bundle-hero-v4",
       "settings": {
         "bundle_title": "Everyday Bundle",
         "bundle_price": "250",
