@@ -1,0 +1,297 @@
+{% comment %}
+  Bundle FAQ Section - Address common concerns and questions
+{% endcomment %}
+
+<style>
+  .bundle-faq {
+    padding: 80px 0;
+    background: #f8f9fa;
+  }
+  
+  .faq-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .faq-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .faq-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background: #f8f9fa;
+  }
+  
+  .faq-question.active {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+  }
+  
+  .faq-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    color: #ff6b6b;
+  }
+  
+  .faq-question.active .faq-icon {
+    transform: rotate(45deg);
+    color: white;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .faq-answer.active {
+    max-height: 200px;
+  }
+  
+  .faq-answer-content {
+    padding: 0 30px 25px;
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .faq-contact {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .faq-contact-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .faq-contact-text {
+    color: #666;
+    margin-bottom: 25px;
+  }
+  
+  .faq-contact-button {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .faq-contact-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .bundle-faq {
+      padding: 60px 0;
+    }
+    
+    .faq-title {
+      font-size: 2rem;
+    }
+    
+    .faq-question {
+      padding: 20px;
+      font-size: 1rem;
+    }
+    
+    .faq-answer-content {
+      padding: 0 20px 20px;
+    }
+  }
+</style>
+
+<div class="bundle-faq">
+  <div class="container">
+    <div class="faq-header">
+      <h2 class="faq-title">{{ section.settings.title }}</h2>
+      <p class="faq-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+    
+    <div class="faq-container">
+      {% for block in section.blocks %}
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ({{ forloop.index }})">
+            <span>{{ block.settings.question }}</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-{{ forloop.index }}">
+            <div class="faq-answer-content">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <div class="faq-contact">
+      <h3 class="faq-contact-title">Still have questions?</h3>
+      <p class="faq-contact-text">Our customer support team is here to help you with any questions about your bundle.</p>
+      <a href="/pages/contact" class="faq-contact-button">Contact Support</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleFAQ(index) {
+    const question = document.querySelector(`.faq-question:nth-of-type(${index * 2 - 1})`);
+    const answer = document.getElementById(`faq-answer-${index}`);
+    
+    // Close all other FAQs
+    document.querySelectorAll('.faq-question').forEach(q => {
+      if (q !== question) {
+        q.classList.remove('active');
+      }
+    });
+    
+    document.querySelectorAll('.faq-answer').forEach(a => {
+      if (a !== answer) {
+        a.classList.remove('active');
+      }
+    });
+    
+    // Toggle current FAQ
+    question.classList.toggle('active');
+    answer.classList.toggle('active');
+  }
+  
+  // Initialize first FAQ as open
+  document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.faq-question')) {
+      toggleFAQ(1);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Bundle FAQ",
+  "class": "section-bundle-faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Everything you need to know about your bundle"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What's included in the bundle?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "The bundle includes all the items listed in the product description."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's included in the Everyday Bundle?",
+            "answer": "The Everyday Bundle includes 3 premium products: UNB-ABD-002, IGN-PRL-006, and SNP-SEA-001. Each item is carefully selected to complement your daily style."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much do I save with this bundle?",
+            "answer": "You save 127 AED (34% off) compared to buying each item separately. The bundle is priced at 250 AED instead of the regular 377 AED."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is shipping really free?",
+            "answer": "Yes! All bundle orders include free shipping within the UAE. No hidden fees or additional charges."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I return individual items from the bundle?",
+            "answer": "Yes, you can return individual items within 30 days of purchase. We'll refund the proportional amount for any returned items."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "bundle_assets": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<link rel=\"stylesheet\" href=\"{{ 'bundle-page.css' | asset_url }}\">\n<script src=\"{{ 'bundle-page.js' | asset_url }}\" defer></script>"
+      }
+    },
+    "bundle_hero": {
+      "type": "bundle-product-hero",
+      "blocks": {
+        "bundle_title": {
+          "type": "bundle_title",
+          "settings": {
+            "title": "{{ product.title }}",
+            "subtitle": "The Perfect Combination for Daily Style",
+            "description": "{{ product.description | strip_html | truncate: 200 }}"
+          }
+        },
+        "bundle_products": {
+          "type": "bundle_products",
+          "settings": {
+            "product_1_sku": "UNB-ABD-002",
+            "product_2_sku": "IGN-PRL-006", 
+            "product_3_sku": "SNP-SEA-001",
+            "msrp_price": "377",
+            "bundle_price": "{{ product.price | money_without_currency }}",
+            "currency": "{{ cart.currency.iso_code }}"
+          }
+        },
+        "urgency_timer": {
+          "type": "urgency_timer",
+          "settings": {
+            "end_date": "2024-12-31",
+            "end_time": "23:59",
+            "urgency_text": "Limited Time Offer - Don't Miss Out!"
+          }
+        },
+        "social_proof": {
+          "type": "social_proof",
+          "settings": {
+            "testimonial_text": "\"This bundle is absolutely perfect! The quality is amazing and the savings are incredible.\"",
+            "customer_name": "Sarah M.",
+            "rating": "5",
+            "review_count": "2,847"
+          }
+        }
+      },
+      "block_order": ["bundle_title", "bundle_products", "urgency_timer", "social_proof"],
+      "settings": {
+        "background_image": "",
+        "background_color": "#f8f9fa",
+        "text_color": "#333333"
+      }
+    },
+    "bundle_features": {
+      "type": "bundle-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "description": "Free shipping on all bundle orders"
+          }
+        },
+        "feature_2": {
+          "type": "feature", 
+          "settings": {
+            "icon": "return",
+            "title": "30-Day Returns",
+            "description": "Not satisfied? Return within 30 days"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "award",
+            "title": "Premium Quality",
+            "description": "Only the finest materials and craftsmanship"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout",
+            "description": "Your payment information is always safe"
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3", "feature_4"],
+      "settings": {
+        "title": "Why Choose Our Bundle?",
+        "subtitle": "Everything you need, nothing you don't"
+      }
+    },
+    "bundle_guarantee": {
+      "type": "bundle-guarantee",
+      "settings": {
+        "title": "100% Satisfaction Guarantee",
+        "description": "We're so confident you'll love your bundle that we offer a full refund if you're not completely satisfied within 30 days.",
+        "guarantee_icon": "check_mark_in_circle"
+      }
+    },
+    "bundle_faq": {
+      "type": "bundle-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's included in the Everyday Bundle?",
+            "answer": "The Everyday Bundle includes 3 premium products: UNB-ABD-002, IGN-PRL-006, and SNP-SEA-001. Each item is carefully selected to complement your daily style."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much do I save with this bundle?",
+            "answer": "You save 127 AED (34% off) compared to buying each item separately. The bundle is priced at 250 AED instead of the regular 377 AED."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is shipping really free?",
+            "answer": "Yes! All bundle orders include free shipping within the UAE. No hidden fees or additional charges."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I return individual items from the bundle?",
+            "answer": "Yes, you can return individual items within 30 days of purchase. We'll refund the proportional amount for any returned items."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about your bundle"
+      }
+    }
+  },
+  "order": ["bundle_assets", "bundle_hero", "bundle_features", "bundle_guarantee", "bundle_faq"]
+}

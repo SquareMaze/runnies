@@ -1,0 +1,374 @@
+/* Bundle Page Custom Styles */
+
+/* Global Bundle Page Enhancements */
+.bundle-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Enhanced Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Bundle Hero Enhancements */
+.bundle-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.bundle-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.05) 0%, rgba(238, 90, 36, 0.05) 100%);
+  z-index: 0;
+}
+
+.bundle-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced CTA Button */
+.bundle-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.bundle-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.bundle-cta:hover::before {
+  left: 100%;
+}
+
+/* Product Cards Enhancement */
+.product-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(238, 90, 36, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-item:hover::before {
+  opacity: 1;
+}
+
+/* Countdown Timer Enhancements */
+.countdown-item {
+  position: relative;
+}
+
+.countdown-number {
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Social Proof Enhancements */
+.social-proof {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-proof::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 4rem;
+  color: rgba(255, 107, 107, 0.1);
+  font-family: serif;
+  line-height: 1;
+}
+
+/* Feature Cards Enhancements */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(238, 90, 36, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+/* Guarantee Section Enhancements */
+.bundle-guarantee {
+  position: relative;
+}
+
+.bundle-guarantee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="30" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* FAQ Enhancements */
+.faq-item {
+  position: relative;
+}
+
+.faq-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-item:hover::before {
+  opacity: 1;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .bundle-hero-content {
+    text-align: center;
+  }
+  
+  .bundle-title {
+    font-size: 2.2rem !important;
+  }
+  
+  .bundle-price {
+    font-size: 2.2rem !important;
+  }
+  
+  .bundle-cta {
+    font-size: 1.1rem !important;
+    padding: 18px 30px !important;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .guarantee-features {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bundle-hero-content {
+    gap: 40px;
+  }
+  
+  .bundle-title {
+    font-size: 3rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .bundle-hero::before {
+    background-size: cover;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .bundle-hero,
+  .bundle-features,
+  .bundle-guarantee,
+  .bundle-faq {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .bundle-cta,
+  .faq-contact-button {
+    background: #333 !important;
+    color: white !important;
+  }
+}
+
+/* Accessibility Enhancements */
+.bundle-cta:focus,
+.faq-question:focus {
+  outline: 3px solid #ff6b6b;
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .bundle-hero::after,
+  .bundle-guarantee::before,
+  .feature-card::before,
+  .product-item::before {
+    animation: none;
+  }
+  
+  .bundle-cta:hover,
+  .feature-card:hover,
+  .product-item:hover {
+    transform: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .bundle-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+  
+  .bundle-title {
+    color: #ffffff;
+  }
+  
+  .bundle-subtitle,
+  .bundle-description {
+    color: #cccccc;
+  }
+  
+  .bundle-pricing {
+    background: #2d2d2d;
+    border-color: #444;
+  }
+  
+  .feature-card {
+    background: #2d2d2d;
+    border-color: #444;
+  }
+  
+  .faq-item {
+    background: #2d2d2d;
+  }
+  
+  .faq-question {
+    background: #2d2d2d;
+    color: #ffffff;
+  }
+  
+  .faq-answer-content {
+    color: #cccccc;
+  }
+}
+
+/* Performance Optimizations */
+.bundle-hero,
+.bundle-features,
+.bundle-guarantee,
+.bundle-faq {
+  will-change: transform;
+}
+
+.bundle-cta,
+.feature-card,
+.product-item {
+  will-change: transform, box-shadow;
+}
+
+/* Loading States */
+.bundle-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.bundle-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ff6b6b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

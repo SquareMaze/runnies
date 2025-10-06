@@ -1,0 +1,233 @@
+{% comment %}
+  Bundle Guarantee Section - Build trust and confidence
+{% endcomment %}
+
+<style>
+  .bundle-guarantee {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bundle-guarantee::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .guarantee-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .guarantee-icon {
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 3rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .guarantee-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .guarantee-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 40px;
+  }
+  
+  .guarantee-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+    margin-top: 20px;
+  }
+  
+  .guarantee-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .guarantee-feature {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .guarantee-feature:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+  }
+  
+  .guarantee-feature-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .guarantee-feature-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .guarantee-feature-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 768px) {
+    .bundle-guarantee {
+      padding: 60px 0;
+    }
+    
+    .guarantee-title {
+      font-size: 2rem;
+    }
+    
+    .guarantee-description {
+      font-size: 1.1rem;
+    }
+    
+    .guarantee-features {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>
+
+<div class="bundle-guarantee">
+  <div class="container">
+    <div class="guarantee-content">
+      <div class="guarantee-icon">
+        {% render 'icon', icon: section.settings.guarantee_icon, size: 'large' %}
+      </div>
+      
+      <h2 class="guarantee-title">{{ section.settings.title }}</h2>
+      <p class="guarantee-description">{{ section.settings.description }}</p>
+      
+      <div class="guarantee-badge">
+        🛡️ 100% Risk-Free Purchase
+      </div>
+      
+      <div class="guarantee-features">
+        <div class="guarantee-feature">
+          <div class="guarantee-feature-icon">💰</div>
+          <div class="guarantee-feature-title">Full Refund</div>
+          <div class="guarantee-feature-text">Get your money back, no questions asked</div>
+        </div>
+        
+        <div class="guarantee-feature">
+          <div class="guarantee-feature-icon">🚚</div>
+          <div class="guarantee-feature-title">Free Returns</div>
+          <div class="guarantee-feature-text">We'll cover all return shipping costs</div>
+        </div>
+        
+        <div class="guarantee-feature">
+          <div class="guarantee-feature-icon">⚡</div>
+          <div class="guarantee-feature-title">Quick Processing</div>
+          <div class="guarantee-feature-text">Refunds processed within 3-5 business days</div>
+        </div>
+        
+        <div class="guarantee-feature">
+          <div class="guarantee-feature-icon">📞</div>
+          <div class="guarantee-feature-title">24/7 Support</div>
+          <div class="guarantee-feature-text">Our team is here to help anytime</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bundle Guarantee",
+  "class": "section-bundle-guarantee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "100% Satisfaction Guarantee"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We're so confident you'll love your bundle that we offer a full refund if you're not completely satisfied within 30 days."
+    },
+    {
+      "type": "select",
+      "id": "guarantee_icon",
+      "label": "Icon",
+      "default": "check_mark_in_circle",
+      "options": [
+        {
+          "value": "check_mark_in_circle",
+          "label": "Check Mark in Circle"
+        },
+        {
+          "value": "award",
+          "label": "Award"
+        },
+        {
+          "value": "shield",
+          "label": "Shield"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Guarantee"
+    }
+  ]
+}
+{% endschema %}

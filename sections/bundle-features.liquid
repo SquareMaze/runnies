@@ -1,0 +1,261 @@
+{% comment %}
+  Bundle Features Section - Highlight key benefits and features
+{% endcomment %}
+
+<style>
+  .bundle-features {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+  
+  .features-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .features-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .features-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+    transition: left 0.5s;
+  }
+  
+  .feature-card:hover::before {
+    left: 100%;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-color: #ff6b6b;
+  }
+  
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .feature-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .bundle-features {
+      padding: 60px 0;
+    }
+    
+    .features-title {
+      font-size: 2rem;
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .feature-card {
+      padding: 30px 20px;
+    }
+  }
+</style>
+
+<div class="bundle-features">
+  <div class="container">
+    <div class="features-header">
+      <h2 class="features-title">{{ section.settings.title }}</h2>
+      <p class="features-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+    
+    <div class="features-grid">
+      {% for block in section.blocks %}
+        <div class="feature-card">
+          <div class="feature-icon">
+            {% render 'icon', icon: block.settings.icon, size: 'large' %}
+          </div>
+          <h3 class="feature-title">{{ block.settings.title }}</h3>
+          <p class="feature-description">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bundle Features",
+  "class": "section-bundle-features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Choose Our Bundle?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Everything you need, nothing you don't"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "truck",
+          "options": [
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "return",
+              "label": "Return"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            },
+            {
+              "value": "lock",
+              "label": "Lock"
+            },
+            {
+              "value": "check_mark",
+              "label": "Check Mark"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "description": "Free shipping on all bundle orders"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "return",
+            "title": "30-Day Returns",
+            "description": "Not satisfied? Return within 30 days"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "award",
+            "title": "Premium Quality",
+            "description": "Only the finest materials and craftsmanship"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout",
+            "description": "Your payment information is always safe"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
