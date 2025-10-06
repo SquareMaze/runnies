@@ -1,4 +1,3 @@
-{% comment %} Bundle Page v2.1.1 - Fixed Liquid syntax error in template settings {% endcomment %}
 {
   "sections": {
     "bundle_assets": {
