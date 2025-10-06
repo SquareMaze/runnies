@@ -10,7 +10,7 @@
 {
   "sections": {
     "bundle_hero": {
-      "type": "bundle-product-hero-v3",
+      "type": "custom-bundle-hero-v3",
       "settings": {}
     }
   },
