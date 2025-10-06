@@ -1,7 +1,7 @@
 {
   "sections": {
     "bundle_hero": {
-      "type": "bundle-product-hero-v4",
+      "type": "bundle-product-hero-v5",
       "settings": {
         "background_color": "#f8f9fa"
       }
