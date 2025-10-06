@@ -1,11 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "bundle_hero": {
-      "type": "bundle-product-hero-v5",
+      "type": "custom-bundle-hero-v3",
       "settings": {
-        "background_color": "#f8f9fa"
+        "bundle_title": "Everyday Bundle",
+        "bundle_price": "250",
+        "original_price": "377",
+        "bundle_product_handle": "everyday-bundle",
+        "bundle_product_1": "a-blue-dhabi",
+        "bundle_product_2": "pearl-fect-mirage-ignite",
+        "bundle_product_3": "seashams-snap-lifestyle-hat"
       }
     }
   },
-  "order": ["bundle_hero"]
+  "order": [
+    "bundle_hero"
+  ]
 }
