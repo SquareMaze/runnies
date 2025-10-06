@@ -356,8 +356,16 @@
     <div class="bundle-content">
       <div class="products-section">
         <div class="products-grid">
-          {% comment %} Get products tagged with 'bundle-everyday' {% endcomment %}
+          {% comment %} Get products tagged with 'bundle-everyday' - try multiple methods {% endcomment %}
           {% assign bundle_products = collections.all.products | where: 'tags', 'bundle-everyday' %}
+          
+          {% comment %} Debug: Show all products and their tags {% endcomment %}
+          {% if bundle_products.size == 0 %}
+            {% assign all_products = collections.all.products %}
+            {% for debug_product in all_products limit: 10 %}
+              <!-- Debug: {{ debug_product.title }} - Tags: {{ debug_product.tags | join: ', ' }} -->
+            {% endfor %}
+          {% endif %}
           
           {% if bundle_products.size > 0 %}
             {% for bundle_product in bundle_products limit: 3 %}
