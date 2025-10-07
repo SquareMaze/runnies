@@ -561,6 +561,9 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      "._imageWrapper_k7df9_55 > ._image_k7df9_55 {max-width: 80px; max-height: 80px;}",
+      "._imageWrapper_k7df9_55 {width: 80px; height: 55px;}"
+    ]
   }
 }
