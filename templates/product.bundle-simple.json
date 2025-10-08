@@ -148,7 +148,7 @@
         "complementary_3K8WDC"
       ],
       "custom_css": [
-        "/* Sticky right column on desktop */@media (min-width: 1040px) {.product-info .product-column-right {position: sticky !important; top: calc(var(--theme-sticky-header-height, 80px) + 20px) !important; align-self: flex-start !important; z-index: 2; max-height: calc(100vh - var(--theme-sticky-header-height, 80px) - 40px); overflow-y: auto; } .product-info .product-column-right .product-form {position: static !important; }}"
+        "@media (min-width: 1040px) {.product-info {display: flex !important; } .product-info .detail.product-column-right {position: -webkit-sticky !important; position: sticky !important; top: 100px !important; align-self: flex-start !important; z-index: 10 !important; } .product-info .product-column-right .product-form {position: static !important; }}"
       ],
       "settings": {
         "show_breadcrumbs": true,
