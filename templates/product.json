@@ -16,11 +16,17 @@
           "type": "title",
           "settings": {}
         },
+        "klaviyo_reviews_average_rating_YUWx6N": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
             "show_tax_and_shipping": false,
-            "enable_product_reviews_by_price": true
+            "enable_product_reviews_by_price": false
           }
         },
         "divider": {
@@ -113,6 +119,7 @@
         },
         "okendo_reviews_carousel_87HeYq": {
           "type": "shopify://apps/okendo/blocks/reviews-carousel/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
           "settings": {
             "show_heading": false,
             "heading": "",
@@ -137,16 +144,11 @@
             "enable_carousel": true,
             "max_products": 4
           }
-        },
-        "klaviyo_reviews_average_rating_YUWx6N": {
-          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
-          "settings": {
-            "product": "{{product}}"
-          }
         }
       },
       "block_order": [
         "title",
+        "klaviyo_reviews_average_rating_YUWx6N",
         "price",
         "divider",
         "custom_liquid_beaLQP",
@@ -159,8 +161,7 @@
         "icon_columns_tMEfTM",
         "okendo_reviews_carousel_87HeYq",
         "description",
-        "complementary_3K8WDC",
-        "klaviyo_reviews_average_rating_YUWx6N"
+        "complementary_3K8WDC"
       ],
       "settings": {
         "show_breadcrumbs": true,
@@ -189,6 +190,7 @@
       "blocks": {
         "fbp_fast_bundle_fbt_position_E6YLNe": {
           "type": "shopify://apps/fbp-fast-bundle/blocks/fbt_position/9e87fbe2-9041-4c23-acf5-322413994cef",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -237,17 +239,10 @@
       "block_order": [
         "okendo_reviews_widget_d87XNj"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "show_space": false
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "title": "You may also like",
-        "show_vendor": false,
-        "grid": 4
       }
     },
     "175990906163042b49": {
@@ -264,6 +259,14 @@
       "settings": {
         "full_width": false,
         "show_space": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "title": "You may also like",
+        "show_vendor": false,
+        "grid": 4
       }
     },
     "17599251060fc3f113": {
@@ -286,10 +289,10 @@
   "order": [
     "main",
     "1759767600cd2a3570",
+    "175990906163042b49",
     "enhanced_product_info",
     "1754908155891f5317",
     "related-products",
-    "175990906163042b49",
     "17599251060fc3f113"
   ]
 }
