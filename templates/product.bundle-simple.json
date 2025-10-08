@@ -153,7 +153,7 @@
         "show_location_underneath": true,
         "inventory_transfers_enable": false,
         "enable_sticky_columns": false,
-        "enable_sticky_atc": false,
+        "enable_sticky_atc": true,
         "sticky_atc_position": "end",
         "sticky_atc_mobile": true,
         "sticky_atc_behavior": "add_to_cart",
