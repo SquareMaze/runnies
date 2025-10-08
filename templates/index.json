@@ -151,6 +151,60 @@
         "show_space": true
       }
     },
+    "50830f37-1ae2-4f43-8f92-52e9c5c1d736": {
+      "type": "shop-the-look",
+      "blocks": {
+        "subheading_BD4pmV": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Power, Performance, Style"
+          }
+        },
+        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "GLIDER SERIES",
+            "heading_max_width": 10,
+            "title_size": 48,
+            "title_size_mobile": 34,
+            "use_h1": false
+          }
+        },
+        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This seasons must-have sunglasses</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_BD4pmV",
+        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-heading-1",
+        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-text-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/gulf-2.webp",
+        "video_external": "",
+        "video_description": "",
+        "height": "fixed",
+        "height_desktop": 600,
+        "height_mobile": 400,
+        "product_list": [
+          "glider-series-sands-of-noor",
+          "glider-series-shamal-we-dance",
+          "sultans-shade-glider-series",
+          "glider-series-the-gulf-is-clear"
+        ],
+        "products_alignment": "bottom right",
+        "product_card_layout": "portrait",
+        "show_swatches": true,
+        "full_width": true,
+        "text_alignment": "top left",
+        "mobile_overlay_over": true,
+        "overlay_style": "shadow"
+      }
+    },
     "collection_list_XKtpcb": {
       "type": "collection-list",
       "blocks": {
@@ -272,60 +326,6 @@
         "coll_thumb_text_align_x": "center",
         "coll_thumb_text_align_y": "bottom",
         "coll_button_style": "primary"
-      }
-    },
-    "50830f37-1ae2-4f43-8f92-52e9c5c1d736": {
-      "type": "shop-the-look",
-      "blocks": {
-        "subheading_BD4pmV": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Power, Performance, Style"
-          }
-        },
-        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-heading-1": {
-          "type": "heading",
-          "settings": {
-            "title": "GLIDER SERIES",
-            "heading_max_width": 10,
-            "title_size": 48,
-            "title_size_mobile": 34,
-            "use_h1": false
-          }
-        },
-        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>This seasons must-have sunglasses</p>",
-            "enlarge_text": false
-          }
-        }
-      },
-      "block_order": [
-        "subheading_BD4pmV",
-        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-heading-1",
-        "template--20584145715223__50830f37-1ae2-4f43-8f92-52e9c5c1d736-text-1"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/gulf-2.webp",
-        "video_external": "",
-        "video_description": "",
-        "height": "fixed",
-        "height_desktop": 600,
-        "height_mobile": 400,
-        "product_list": [
-          "glider-series-sands-of-noor",
-          "glider-series-shamal-we-dance",
-          "sultans-shade-glider-series",
-          "glider-series-the-gulf-is-clear"
-        ],
-        "products_alignment": "bottom right",
-        "product_card_layout": "portrait",
-        "show_swatches": true,
-        "full_width": true,
-        "text_alignment": "top left",
-        "mobile_overlay_over": true,
-        "overlay_style": "shadow"
       }
     },
     "1521034575223": {
@@ -509,8 +509,8 @@
     "1617293273c37b524b",
     "1480591889144",
     "1759925620fb4375bf",
-    "collection_list_XKtpcb",
     "50830f37-1ae2-4f43-8f92-52e9c5c1d736",
+    "collection_list_XKtpcb",
     "1521034575223",
     "1521035976582",
     "0447c6d8-7e6b-47be-a617-8aa70b84a8af"
