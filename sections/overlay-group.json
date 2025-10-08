@@ -1,1 +1,103 @@
-{"type":"aside","name":"Overlay Group","sections":{"cart-drawer":{"type":"cart-drawer","settings":{"show_order_note":true,"show_tax_and_shipping":false,"enable_direct_cart":false,"cart_terms_page":"","show_backorder_text":true,"show_inventory_notice":"low","show_inventory_count":"low","inventory_threshold":10,"show_announcement":true,"announcement_position":"below-items","announcement_text":"","announcement_icon":"price_tag","announcement_icon_size":"small","announcement_enable_box":true,"announcement_box_color":"#ececec","empty_icon":"bag","empty_heading":"Your bag is empty","empty_text":"<p>Looking for ideas?<\/p>","empty_button_text":"Start shopping","empty_button_link":"","empty_button_style":"primary","empty_enable_custom_colors":false,"empty_color_background":"#ffffff","empty_color_background_gradient":"","empty_color_text":"#171717","enable_cross_sells":true,"cross_sell_title":"You may also like","cross_sell_products":["glider-series-sands-of-noor","glider-series-the-gulf-is-clear"],"enable_automatic_cross_sells":true,"croll_sell_color_scheme":"default"}},"pop_up_kRGtRn":{"type":"pop-up","blocks":{"heading_nfqbE4":{"type":"heading","settings":{"heading":"UNLOCK 15% OFF","heading_size":"h4"}},"text_bt8rYG":{"type":"text","settings":{"text":"<p>Join our club and we will send you the discount code<\/p>","text_size":""}},"newsletter_signup_tNfafn":{"type":"newsletter-signup","settings":{"button_style":"primary"}}},"block_order":["heading_nfqbE4","text_bt8rYG","newsletter_signup_tNfafn"],"name":"Pop-up","settings":{"trigger":"delay","delay":5,"show_to_guests_only":true,"show_on_mobile":true,"dismiss_days":30,"position":"justify-center items-center","text_align":"text-center","heading_color":"#070707","text_color":"#070707","bg_color":"#ffffff","bg_grad":"","tint_opacity":0}}},"order":["cart-drawer","pop_up_kRGtRn"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "aside",
+  "name": "Overlay Group",
+  "sections": {
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+        "show_order_note": true,
+        "show_tax_and_shipping": false,
+        "enable_direct_cart": false,
+        "cart_terms_page": "",
+        "show_backorder_text": true,
+        "show_inventory_notice": "low",
+        "show_inventory_count": "low",
+        "inventory_threshold": 10,
+        "show_announcement": true,
+        "announcement_position": "below-items",
+        "announcement_text": "",
+        "announcement_icon": "price_tag",
+        "announcement_icon_size": "small",
+        "announcement_enable_box": true,
+        "announcement_box_color": "#ececec",
+        "empty_icon": "bag",
+        "empty_heading": "Your bag is empty",
+        "empty_text": "<p>Looking for ideas?</p>",
+        "empty_button_text": "Start shopping",
+        "empty_button_link": "",
+        "empty_button_style": "primary",
+        "empty_enable_custom_colors": false,
+        "empty_color_background": "#ffffff",
+        "empty_color_background_gradient": "",
+        "empty_color_text": "#171717",
+        "enable_cross_sells": true,
+        "cross_sell_title": "You may also like",
+        "cross_sell_products": [
+          "glider-series-sands-of-noor",
+          "glider-series-the-gulf-is-clear"
+        ],
+        "enable_automatic_cross_sells": true,
+        "croll_sell_color_scheme": "default"
+      }
+    },
+    "pop_up_kRGtRn": {
+      "type": "pop-up",
+      "blocks": {
+        "heading_nfqbE4": {
+          "type": "heading",
+          "settings": {
+            "heading": "UNLOCK 15% OFF",
+            "heading_size": "h4"
+          }
+        },
+        "text_bt8rYG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Join our club and we will send you the discount code</p>",
+            "text_size": ""
+          }
+        },
+        "newsletter_signup_tNfafn": {
+          "type": "newsletter-signup",
+          "settings": {
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nfqbE4",
+        "text_bt8rYG",
+        "newsletter_signup_tNfafn"
+      ],
+      "name": "Pop-up",
+      "settings": {
+        "trigger": "delay",
+        "delay": 10,
+        "show_to_guests_only": true,
+        "show_on_mobile": true,
+        "dismiss_days": 30,
+        "position": "justify-center items-center",
+        "text_align": "text-center",
+        "bg_image": "shopify://shop_images/sands-1.webp",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "bg_color": "#232323",
+        "bg_grad": "",
+        "tint_opacity": 60
+      }
+    }
+  },
+  "order": [
+    "cart-drawer",
+    "pop_up_kRGtRn"
+  ]
+}
