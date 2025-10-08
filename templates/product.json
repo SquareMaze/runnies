@@ -137,6 +137,12 @@
             "enable_carousel": true,
             "max_products": 4
           }
+        },
+        "klaviyo_reviews_average_rating_YUWx6N": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
@@ -153,7 +159,8 @@
         "icon_columns_tMEfTM",
         "okendo_reviews_carousel_87HeYq",
         "description",
-        "complementary_3K8WDC"
+        "complementary_3K8WDC",
+        "klaviyo_reviews_average_rating_YUWx6N"
       ],
       "settings": {
         "show_breadcrumbs": true,
