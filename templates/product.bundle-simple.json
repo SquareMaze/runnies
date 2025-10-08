@@ -148,7 +148,7 @@
         "complementary_3K8WDC"
       ],
       "custom_css": [
-        "/* Desktop only to avoid cramped mobile UIs */@media (min-width: 990px) {/* Adjust selector to match your theme’s right column */ .product-column-right {position: sticky; top: var(--sticky-top, 80px); /* leave room for fixed header */ align-self: start; /* prevents auto vertical stretching in grids */ z-index: 2; /* keep above gallery if overlapping */ }}"
+        "/* Desktop only to avoid cramped mobile UIs */@media (min-width: 790px) {/* Adjust selector to match your theme’s right column */ .product-column-right {position: sticky; top: var(--sticky-top, 80px); /* leave room for fixed header */ align-self: start; /* prevents auto vertical stretching in grids */ z-index: 2; /* keep above gallery if overlapping */ }}"
       ],
       "settings": {
         "show_breadcrumbs": true,
