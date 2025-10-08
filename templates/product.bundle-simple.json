@@ -172,22 +172,6 @@
         "media_grouping_option": "Color,Colour,Couleur,Farbe"
       }
     },
-    "1759767600cd2a3570": {
-      "type": "apps",
-      "blocks": {
-        "fbp_fast_bundle_fbt_position_E6YLNe": {
-          "type": "shopify://apps/fbp-fast-bundle/blocks/fbt_position/9e87fbe2-9041-4c23-acf5-322413994cef",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "fbp_fast_bundle_fbt_position_E6YLNe"
-      ],
-      "settings": {
-        "full_width": false,
-        "show_space": true
-      }
-    },
     "enhanced_product_info": {
       "type": "enhanced-product-info",
       "blocks": {
@@ -240,7 +224,6 @@
   },
   "order": [
     "main",
-    "1759767600cd2a3570",
     "enhanced_product_info",
     "1754908155891f5317",
     "related-products"
